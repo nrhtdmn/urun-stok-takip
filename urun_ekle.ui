@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1065</width>
+    <height>639</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* Genel stil kuralları */
+* {
+  background-color: #333333; /* Mavi arka plan */
+  color: #FFFFFF; /* Beyaz yazı */
+}
+
+/* Sekmeler için stil kuralları */
+QTabBar::tab {
+  background-color: #333333; /* Sekmelerin arka plan rengi */
+  color: #ffffff; /* Beyaz yazı rengi */
+  margin-left: 5px; /* Solda 5px boşluk bırak */
+  margin-right: 5px; /* Sağda 5px boşluk bırak */
+  border-right: 1px solid #E0E0E0; /* Kalın separator */
+  border-image: linear-gradient(to right, #E0E0E0 0%, #F5F5F5 50%, #E0E0E0 100%); /* Sekmelerin arasına gölge ekleme */
+}
+
+/* Fare üzerine geldiğinde sekmelerin rengi değişir */
+QTabBar::tab:hover {
+  background-color: #0651ff; /* Fare üzerine gelince arka plan rengi */
+}
+
+/* Seçili sekmenin rengi değişir */
+QTabBar::tab:selected {
+  background-color:#2980b9; /* Seçili sekmenin arka plan rengi */
+}
+
+/* Açılır menü stil kuralları */
+QComboBox, QComboBox::drop-down {
+  border: 1px solid #ccc; /* Kenarlık rengi ve kalınlığı */
+  border-radius: 4px; /* Kenarlık köşeleri yuvarlatma */
+  background-color: #ffffff; /* Açılır menünün arka plan rengi */
+}
+
+/* Seçili öğenin arka plan rengi */
+QComboBox::item:selected {
+  background-color: #eee;
+}
+
+/* Açılır menü ok simgesi */
+QComboBox::down-arrow {
+  image: url(:/siyah/asagi.png); /* Ok simgesi */
+  width: 16px; /* Ok resminin genişliği */
+  height: 16px; /* Ok resminin yüksekliği */
+}
+
+/* Açılır menü öğelerinin hover ve pressed efektleri */
+QComboBox::item:hover {
+  background-color: #f9f9f9;
+}
+
+QComboBox::item:pressed {
+  background-color: #ddd;
+}
+
+/* Giriş kutuları ve açılır menülerin genel stil kuralları */
+ QComboBox {
+  background-color: #ffffff; /* Arka plan rengi beyaz */
+  color: #333333; /* Yazı rengi */
+}
+QLineEdit {
+  background-color: #ffffff; /* Başlangıçta arka plan rengi beyaz */
+}
+
+QLineEdit:!enabled {
+  background-color: #ffff00; /* İçeriği dolu olan QLineEdit'in arka plan rengi sarı */
+}
+
+/* Butonların stil kuralları */
+QPushButton, QToolButton {
+  background-color: #333333; /* Arka plan rengi kırmızı */
+  color: #ffffff; /* Yazı rengi beyaz */
+}
+
+/* Buton hover efekti */
+QPushButton:hover, QToolButton:hover {
+  background-color: #c0392b; /* Hover rengi */
+}
+
+/* Butonların stil kuralları */
+QPushButton, QToolButton {
+  background-color:  #333333; /* Arka plan rengi */
+  color: #ffffff; /* Yazı rengi beyaz */
+  border: 1px solid #b3ff26; /* Kenarlık */
+  border-radius: 4px; /* Kenarlık köşeleri yuvarlatma */
+  padding: 8px 16px; /* Buton içeriği için dolgular */
+}
+
+/* Buton hover efekti */
+QPushButton:hover, QToolButton:hover {
+  background-color: #2980b9; /* Hover rengi */
+  border-color: #2980b9; /* Kenarlık rengi */
+}
+
+/* Buton basılma efekti */
+QPushButton:pressed, QToolButton:pressed {
+  background-color: #1f618d; /* Basılma rengi */
+  border-color: #1f618d; /* Kenarlık rengi */
+}
+
+/* Radyo düğmelerinin stil kuralları */
+QRadioButton {
+  color: #white; /* Yazı rengi */
+}
+
+QRadioButton::indicator {
+  width: 16px; /* Gösterge genişliği */
+  height: 16px; /* Gösterge yüksekliği */
+  border: 2px solid #3498db; /* Kenarlık rengi */
+  border-radius: 8px; /* Gösterge köşeleri yuvarlatma */
+  background-color: #ffffff; /* Arka plan rengi */
+}
+
+QRadioButton::indicator:checked {
+  background-color: #3498db; /* Seçili arka plan rengi */
+  border-color: #3498db; /* Seçili kenarlık rengi */
+}
+
+QRadioButton::indicator:hover {
+  border-color: #2980b9; /* Hover kenarlık rengi */
+}
+
+QRadioButton::indicator:checked:hover {
+  background-color: #2980b9; /* Seçili hover arka plan rengi */
+  border-color: #2980b9; /* Seçili hover kenarlık rengi */
+}
+
+/* QLineEdit stil kuralları */
+QLineEdit,QTextEdit {
+  border: 1px solid #ccc; /* Kenarlık rengi ve kalınlığı */
+  border-radius: 4px; /* Kenarlık köşeleri yuvarlatma */
+  /*padding: 6px; /* İçerik dolgusu */
+  background-color: #ffffff; /* Arka plan rengi */
+  color: #333333; /* Yazı rengi */
+}
+
+/* QLineEdit hover efekti */
+QLineEdit:hover,QTextEdit:hover {
+  border-color: #3498db; /* Kenarlık rengi */
+}
+
+/* QLineEdit odaklandığında */
+QLineEdit:focus {
+  border-color: #3498db; /* Kenarlık rengi */
+}
+QTextEdit:focus {
+  border-color: #3498db; /* Kenarlık rengi */
+}
+
+/* Etiketlerin (QLabel) stil kuralları */
+QLabel {
+  color: white; /* Yazı rengi */
+text-align: center;
+}
+
+/* Etiketlerin hover efekti */
+QLabel:hover {
+  color: yellow; /* Hover rengi */
+}
+
+/* Tablo Widget stil kuralları */
+QTableWidget {
+  alternate-background-color: #f5f5f5; /* Alternatif satır arka plan rengi */
+  background-color: #333333; /* Arka plan rengi */
+  color: #ffffff; /* Yazı rengi */
+  selection-background-color: #3498db; /* Seçili arka plan rengi */
+  selection-color: #ffffff; /* Seçili yazı rengi */
+  border: 1px solid #ccc; /* Kenarlık rengi ve kalınlığı */
+  border-radius: 4px; /* Kenarlık köşeleri yuvarlatma */
+  gridline-color: white;
+  gridline-width: 1px; /* Satır ve sütun çizgilerinin kalınlığı */
+}
+
+/* Tablo Widget satır hover efekti */
+QTableWidget::item:hover {
+  background-color: #f0f0f0; /* Satır üzerine gelindiğinde arka plan rengi */
+}
+
+/* Tablo Widget başlık stil kuralları */
+QHeaderView::section {
+  background-color: #333333; /* Başlık arka plan rengi */
+  color: #ffffff; /* Başlık yazı rengi */
+  padding: 4px; /* Başlık dolgusu */
+  border: none; /* Başlık kenarlığı yok */
+  font-weight: bold; /* Kalın yazı tipi */
+  font-size: 11pt; /* 11 punto yazı boyutu */
+}
+
+/* Tablo Widget hücre içeriği */
+QTableWidget QTableWidget::item {
+  font-family: Arial; /* Yazı tipi */
+  font-size: 11pt; /* 11 punto yazı boyutu */
+}
+
+/* Tablo Widget'in içeriğini sığdırma */
+QTableView {
+  font-size: 11pt; /* Yazı boyutu */
+  alternate-background-color: #f5f5f5; /* Alternatif satır arka plan rengi */
+  background-color: #333333; /* Arka plan rengi */
+  color: #ffffff; /* Yazı rengi */
+}
+
+/* Tablo Widget başlık hover efekti */
+QHeaderView::section:hover {
+  background-color: #2980b9; /* Başlık üzerine gelindiğinde arka plan rengi */
+}
+
+/* QGroupBox stil kuralları */
+QGroupBox {
+  border: 1px solid #ccc; /* Kenarlık rengi ve kalınlığı */
+  border-radius: 6px; /* Kenarlık köşeleri yuvarlatma */
+  padding: 6px; /* İçerik dolgusu */
+  background-color: #333333; /* Arka plan rengi */
+  color: #ffffff; /* Yazı rengi */
+}
+
+/* QGroupBox başlık stil kuralları */
+QGroupBox::title {
+  subcontrol-origin: margin; /* Başlık başlangıç noktası */
+  subcontrol-position: top left; /* Başlık pozisyonu */
+  left: 10px; /* Sol boşluk */
+  padding: 0 6px; /* Başlık içeriği için dolgu */
+  background-color: #333333; /* Arka plan rengi */
+  color: #ffffff; /* Yazı rengi */
+}
+
+/* İç içe tablar için stil kuralları */
+QTabWidget::pane {
+  border: 1px solid #ccc; /* Kenarlık rengi ve kalınlığı */
+  background-color: #ffffff; /* Arka plan rengi */
+}
+
+QTabWidget::tab-bar {
+  alignment: center;
+}
+
+QTabBar::tab {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  min-width: 8ex;
+  padding: 4px;
+  border: 1px solid grey; /*#ccc;*/ /* Kenarlık rengi ve kalınlığı */
+  background-color: #f5f5f5; /* Arka plan rengi */
+  color: #333333; /* Yazı rengi */
+}
+
+QTabBar::tab:selected {
+  background-color: #333333; /* Seçili sekmenin arka plan rengi */
+  color: #ffffff; /* Seçili sekmenin yazı rengi */
+}
+
+/* Tablodaki satırlar ve sütunlar arası çizgilerin rengini beyaz ve ince yapma */
+QTableWidget QTableView {
+  gridline-color: white; /* Satır ve sütun çizgilerinin rengi */
+  gridline-width: 1px; /* Satır ve sütun çizgilerinin kalınlığı */
+}
+
+/* QLineEdit içeriğinde yazı varken arka plan rengini sarı yapma */
+/*QLineEdit {
+  background-color: #ffffff; /* Başlangıçta arka plan rengi beyaz }*/
+
+
+/*QLineEdit:focus {
+  background-color: #ffff00; /* İçeriğe odaklandığında arka plan rengi sarı }*/
+
+
+/* QLineEdit içeriği doluyken arka plan rengini sarı yapma */
+
+/* Combobox stil kuralları */
+QComboBox {
+  border: 1px solid #ccc; /* Kenarlık rengi ve kalınlığı */
+  border-radius: 4px; /* Kenarlık köşeleri yuvarlatma */
+  background-color: #ffffff; /* Arka plan rengi */
+}
+
+/* Combobox üzerine gelindiğinde */
+QComboBox:hover {
+  background-color: #ffff00; /* Sarı arka plan rengi */
+}
+
+/* LineEdit stil kuralları */
+QLineEdit {
+  border: 1px solid #ccc; /* Kenarlık rengi ve kalınlığı */
+  border-radius: 4px; /* Kenarlık köşeleri yuvarlatma */
+  background-color: #ffffff; /* Arka plan rengi */
+}
+
+/* LineEdit üzerine gelindiğinde */
+QLineEdit:hover,QTextEdit:hover {
+  background-color: #ffff00; /* Sarı arka plan rengi */
+}
+
+/* GroupBox stil kuralları */
+QGroupBox {
+  border: 2px solid grey;/*#ccc;*/ /* Kenarlık rengi ve kalınlığı */
+  border-radius: 6px; /* Kenarlık köşeleri yuvarlatma */
+  padding: 6px; /* İçerik dolgusu */
+  background-color: #333333; /* Arka plan rengi */
+  color: #ffffff; /* Yazı rengi */
+}
+
+/* GroupBox üzerine gelindiğinde */
+QGroupBox:hover {
+  background-color: #ffff00; /* Sarı arka plan rengi */
+color:#ffffff /* Yazı rengi */
+}
+
+/* CheckButton ve RadioButton stil kuralları */
+QCheckBox, QRadioButton {
+  color: #ffffff; /* Yazı rengi */
+}
+
+/* CheckButton ve RadioButton üzerine gelindiğinde */
+QCheckBox:hover, QRadioButton:hover {
+  background-color: #ffff00; /* Sarı arka plan rengi */
+  color: black; /* Yazı rengi */
+  border-radius: 3px; /* Kenarlık köşeleri yuvarlatma */
+  /*padding: 1px; /* İçerik dolgusu */
+}
+
+/*--------------------------------------------------------------------*/
+
+/* StackedWidget ileri ve geri butonlarının stil kuralları */
+QStackedWidget &gt; QAbstractButton {
+  background-color: #333333; /* Arka plan rengi ile aynı renk */
+  border: none; /* Kenarlık yok */
+  width: 0; /* Genişlik sıfır */
+  height: 0; /* Yükseklik sıfır */
+}
+
+/* İleri ve geri butonlarının üzerine gelindiğinde */
+QStackedWidget &gt; QAbstractButton:hover {
+  background-color: #333333; /* Arka plan rengi ile aynı renk */
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QWidget" name="widget_8" native="true">
+      <property name="maximumSize">
+       <size>
+        <width>250</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>10</width>
+           <height>30</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget" native="true">
+         <layout class="QFormLayout" name="formLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Ürün Kodu</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="lne_urunkodu">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Ürün Adı</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="lne_urunadi"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Birim Fiyat</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="lne_birimfiyat"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Stok Miktarı</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="lne_stokmiktari"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_2" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>Ürün Açıklaması</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="txt_urunaciklamas"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_3" native="true">
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>Ürün Kategorisi</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="cmb_kategori">
+            <property name="currentIndex">
+             <number>-1</number>
+            </property>
+            <item>
+             <property name="text">
+              <string>Telefon</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Bilgisayar</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Beyaz Eşya</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QComboBox" name="cmb_marka">
+            <property name="currentIndex">
+             <number>-1</number>
+            </property>
+            <item>
+             <property name="text">
+              <string>Acer</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Samsung</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Apple</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Oppo</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>Ürün Markası</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QWidget" name="widget_6" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QWidget" name="widget_5" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;Kategoriye Göre Listele&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="cmb_kategoriyegorelistele">
+            <property name="currentIndex">
+             <number>-1</number>
+            </property>
+            <item>
+             <property name="text">
+              <string>Telefon</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Bilgisayar</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Beyaz Eşya</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_kategoriyegore_listele">
+            <property name="text">
+             <string>Kategoriye Göre Listele</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="tablowidget">
+         <property name="rowCount">
+          <number>30</number>
+         </property>
+         <property name="columnCount">
+          <number>7</number>
+         </property>
+         <attribute name="horizontalHeaderCascadingSectionResizes">
+          <bool>false</bool>
+         </attribute>
+         <row>
+          <property name="text">
+           <string>1</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>2</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>3</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>4</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>5</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>6</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>7</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>8</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>9</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>10</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>11</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>12</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>13</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>14</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>15</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>16</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>17</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>18</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>20</string>
+          </property>
+         </row>
+         <row/>
+         <row/>
+         <row/>
+         <row/>
+         <row/>
+         <row/>
+         <row/>
+         <row/>
+         <row/>
+         <row/>
+         <row/>
+         <column/>
+         <column/>
+         <column/>
+         <column/>
+         <column/>
+         <column/>
+         <column/>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QWidget" name="widget_4" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="btn_urunEkle">
+         <property name="text">
+          <string>Ürün Ekle</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_urunsil">
+         <property name="text">
+          <string>Ürün Sil</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_urunguncelle">
+         <property name="text">
+          <string>Ürün Güncelleme</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_urun_listele">
+         <property name="text">
+          <string>Ürün Listeleme</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,262 @@
+[
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "QtWidgets",
+        "importPath": "PyQt5",
+        "description": "PyQt5",
+        "isExtraImport": true,
+        "detail": "PyQt5",
+        "documentation": {}
+    },
+    {
+        "label": "uic",
+        "importPath": "PyQt5",
+        "description": "PyQt5",
+        "isExtraImport": true,
+        "detail": "PyQt5",
+        "documentation": {}
+    },
+    {
+        "label": "QtCore",
+        "importPath": "PyQt5",
+        "description": "PyQt5",
+        "isExtraImport": true,
+        "detail": "PyQt5",
+        "documentation": {}
+    },
+    {
+        "label": "QtGui",
+        "importPath": "PyQt5",
+        "description": "PyQt5",
+        "isExtraImport": true,
+        "detail": "PyQt5",
+        "documentation": {}
+    },
+    {
+        "label": "QtWidgets",
+        "importPath": "PyQt5",
+        "description": "PyQt5",
+        "isExtraImport": true,
+        "detail": "PyQt5",
+        "documentation": {}
+    },
+    {
+        "label": "QtCore",
+        "importPath": "PyQt5",
+        "description": "PyQt5",
+        "isExtraImport": true,
+        "detail": "PyQt5",
+        "documentation": {}
+    },
+    {
+        "label": "QtGui",
+        "importPath": "PyQt5",
+        "description": "PyQt5",
+        "isExtraImport": true,
+        "detail": "PyQt5",
+        "documentation": {}
+    },
+    {
+        "label": "QtWidgets",
+        "importPath": "PyQt5",
+        "description": "PyQt5",
+        "isExtraImport": true,
+        "detail": "PyQt5",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "PyQt5.QtWidgets",
+        "description": "PyQt5.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt5.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "edildi.",
+        "importPath": "Urun_Ekle import *  ##Ui.py deki tüm argümanlat",
+        "description": "Urun_Ekle import *  ##Ui.py deki tüm argümanlat",
+        "isExtraImport": true,
+        "detail": "Urun_Ekle import *  ##Ui.py deki tüm argümanlat",
+        "documentation": {}
+    },
+    {
+        "label": "sqlite3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlite3",
+        "description": "sqlite3",
+        "detail": "sqlite3",
+        "documentation": {}
+    },
+    {
+        "label": "tablo_ozellik",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def tablo_ozellik():\n    ui.tablowidget.clear()  # butona basıp veya fonksiyonu çağırdığımda önce tabloyu temizle.\n    ui.tablowidget.setHorizontalHeaderLabels(\n        (\n            \"Ürün\\nKodu\",\n            \"Ürün\\nAdı\",\n            \"Birim\\nFiyatı\",\n            \"Stok\\nMiktarı\",\n            \"Ürün\\nAçıklaması\",\n            \"Markası\",",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "kayit_ekle",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def kayit_ekle():  # Kayıt Ekleme işini bu fonksiyonda metod da yapacağız.\n    UrunKodu = int(\n        ui.lne_urunkodu.text()\n    )  # urun kodu line editine ne yazdıysan o. int e çevirdim. veritabanında öyle\n    UrunAdi = ui.lne_urunadi.text()  # aynısı string olduğu için .dp de çevirme yok\n    BirimFiyat = int(ui.lne_birimfiyat.text())\n    StokMiktari = int(ui.lne_stokmiktari.text())\n    UrunAciklama = (\n        ui.txt_urunaciklamas.toPlainText()\n    )  # Qtext Edit te text değil bu kullanılır.",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "kayit_listele",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def kayit_listele():  # burada tüm kayıtları listeleteceğiz.\n    tablo_ozellik()\n    sorgu = \"select * from urun\"  # karışıklık olmasın komutu buraya yaz. komutları böyle kullanmak güzel\n    islem.execute(sorgu)  # sorgu komutunu gönder.\n    for indexSatir, KayitNumarasi in enumerate(\n        islem\n    ):  # islem içinde indexSatir indeksi KayitNumarasi kaydın değerini döndürür.\n        for indexSutun, Kayit_Sutun in enumerate(\n            KayitNumarasi\n        ):  # döndürülen değerin kaydından sütunu ve sutun değerini döndürür",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "kategoriyegorelistele",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def kategoriyegorelistele():\n    listelenecekKategori = ui.cmb_kategoriyegorelistele.currentText()\n    # listelenecekKategori değişkenine dediğim ki bu listelenecek olan combobox un içinde seçili olan kategoridir.\n    # bozdolabı ise buzdolabı , telefon ise telefondur.\n    ui.tablowidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)\n    # tabloyu içindekilere sığdırır.\n    ui.tablowidget.setHorizontalHeaderLabels(\n        (\n            \"Ürün\\nKodu\",\n            \"Ürün\\nAdı\",",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "kayit_sil",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def kayit_sil():\n    sil_mesaj = QMessageBox.question(\n        pencere,\n        \"Silme İşlemi\",\n        \"Kaydı Silmek İstediğinize Emin Misiniz?\",\n        QMessageBox.Yes | QMessageBox.No,\n    )\n    if sil_mesaj == QMessageBox.Yes:\n        secilen_kayit = ui.tablowidget.selectedItems()\n        silinecek_kayit = secilen_kayit[0].text()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "kayit_guncelle",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def kayit_guncelle():\n    guncelle_mesaj = QMessageBox.question(\n        pencere,\n        \"Güncelleme İşlemi\",\n        \"Kaydı Güncellemek İstediğinizden Emin Misiniz?\",\n        QMessageBox.Yes | QMessageBox.No,\n    )\n    if guncelle_mesaj == QMessageBox.Yes:\n        try:\n            UrunKodu = int(ui.lne_urunkodu.text())  # urun kodu line editine ne yazdıysan o. int e çevirdim. veritabanında öyle",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "uygulama",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "uygulama = QApplication(\n    sys.argv\n)  # uygulama içindeki tüm argümanları al uygulama adı ver.\npencere = (\n    QMainWindow()\n)  # Mainwindow içindeki tüm fonksiyonları al. pencere değişkenine ata\nui = Ui_MainWindow()  # urun_ekle de bulunan tüm class içindekileri ui. diye adlandır.\nui.setupUi(pencere)  # ui. kodunun pencere olarak açılmasını sağlar.\npencere.show()  # pencereyi açar. ama kapatılması gerekir.\n#########################################################",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "pencere",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "pencere = (\n    QMainWindow()\n)  # Mainwindow içindeki tüm fonksiyonları al. pencere değişkenine ata\nui = Ui_MainWindow()  # urun_ekle de bulunan tüm class içindekileri ui. diye adlandır.\nui.setupUi(pencere)  # ui. kodunun pencere olarak açılmasını sağlar.\npencere.show()  # pencereyi açar. ama kapatılması gerekir.\n#########################################################\n###### VERİTABANI İŞLEMLERİ ####################################\n################################################################\nimport sqlite3  # veritabanı kütüphanesini yükler",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "ui",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "ui = Ui_MainWindow()  # urun_ekle de bulunan tüm class içindekileri ui. diye adlandır.\nui.setupUi(pencere)  # ui. kodunun pencere olarak açılmasını sağlar.\npencere.show()  # pencereyi açar. ama kapatılması gerekir.\n#########################################################\n###### VERİTABANI İŞLEMLERİ ####################################\n################################################################\nimport sqlite3  # veritabanı kütüphanesini yükler\nbaglanti = sqlite3.connect(\n    \"urunler.db\"\n)  # sqlite3 bağlan urunler.db veritabanını oluştur.",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "baglanti",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "baglanti = sqlite3.connect(\n    \"urunler.db\"\n)  # sqlite3 bağlan urunler.db veritabanını oluştur.\n# adına da başlantı de.\nislem = baglanti.cursor()  # bağlantıda mause gibi kullanır.\nbaglanti.commit()  # bağlantı da ne yaparsak veritabanına kaydeder.\ntable = islem.execute(\n    \"create table if not exists urun(urunKodu int, urunAdi text, birimFiyat int, stokMiktari int, urunAciklamasi text, marka text, kategori text)\"\n)  # burada create table if not exists urun aynı isimde varsa ekleme yoksa ekle , urunKodu int gibi kategori ekle\nbaglanti.commit()  # # bağlantı da ne yaparsak veritabanına kaydeder.",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "islem",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "islem = baglanti.cursor()  # bağlantıda mause gibi kullanır.\nbaglanti.commit()  # bağlantı da ne yaparsak veritabanına kaydeder.\ntable = islem.execute(\n    \"create table if not exists urun(urunKodu int, urunAdi text, birimFiyat int, stokMiktari int, urunAciklamasi text, marka text, kategori text)\"\n)  # burada create table if not exists urun aynı isimde varsa ekleme yoksa ekle , urunKodu int gibi kategori ekle\nbaglanti.commit()  # # bağlantı da ne yaparsak veritabanına kaydeder.\ndef tablo_ozellik():\n    ui.tablowidget.clear()  # butona basıp veya fonksiyonu çağırdığımda önce tabloyu temizle.\n    ui.tablowidget.setHorizontalHeaderLabels(\n        (",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "table",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "table = islem.execute(\n    \"create table if not exists urun(urunKodu int, urunAdi text, birimFiyat int, stokMiktari int, urunAciklamasi text, marka text, kategori text)\"\n)  # burada create table if not exists urun aynı isimde varsa ekleme yoksa ekle , urunKodu int gibi kategori ekle\nbaglanti.commit()  # # bağlantı da ne yaparsak veritabanına kaydeder.\ndef tablo_ozellik():\n    ui.tablowidget.clear()  # butona basıp veya fonksiyonu çağırdığımda önce tabloyu temizle.\n    ui.tablowidget.setHorizontalHeaderLabels(\n        (\n            \"Ürün\\nKodu\",\n            \"Ürün\\nAdı\",",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "kayit_ekle_butonu",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "kayit_ekle_butonu = ui.btn_urunEkle.clicked.connect(kayit_ekle)\n### değişkene zevkine atadım. diyor ki urun ekle butonuna tıkladığında def kayit_ekle fonksiyonunu\n## bul ona başlan ve oradaki işlemi yap.\nkayit_listele_butonu = ui.btn_urun_listele.clicked.connect(kayit_listele)\n# kayıt listele butonuna tıkladığında tabloyu listeler fonksiyonu çağırır.\nkategoriyegorelistele_butonu = ui.btn_kategoriyegore_listele.clicked.connect(\n    kategoriyegorelistele\n)\n# kategriye göre listeleyecek.\nkayit_sil_butonu = ui.btn_urunsil.clicked.connect(kayit_sil)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "kayit_listele_butonu",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "kayit_listele_butonu = ui.btn_urun_listele.clicked.connect(kayit_listele)\n# kayıt listele butonuna tıkladığında tabloyu listeler fonksiyonu çağırır.\nkategoriyegorelistele_butonu = ui.btn_kategoriyegore_listele.clicked.connect(\n    kategoriyegorelistele\n)\n# kategriye göre listeleyecek.\nkayit_sil_butonu = ui.btn_urunsil.clicked.connect(kayit_sil)\nkayit_guncelle_butonu =ui.btn_urunguncelle.clicked.connect(kayit_guncelle)\n#########################################################┌\n####### TABLO AYARLARI ###############",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "kategoriyegorelistele_butonu",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "kategoriyegorelistele_butonu = ui.btn_kategoriyegore_listele.clicked.connect(\n    kategoriyegorelistele\n)\n# kategriye göre listeleyecek.\nkayit_sil_butonu = ui.btn_urunsil.clicked.connect(kayit_sil)\nkayit_guncelle_butonu =ui.btn_urunguncelle.clicked.connect(kayit_guncelle)\n#########################################################┌\n####### TABLO AYARLARI ###############\ntablo_ozellik()\nsys.exit(uygulama.exec_())  # arayüzü çarpıdan kapatır. bu olmazsa sürekli açılır sayfa",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "kayit_sil_butonu",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "kayit_sil_butonu = ui.btn_urunsil.clicked.connect(kayit_sil)\nkayit_guncelle_butonu =ui.btn_urunguncelle.clicked.connect(kayit_guncelle)\n#########################################################┌\n####### TABLO AYARLARI ###############\ntablo_ozellik()\nsys.exit(uygulama.exec_())  # arayüzü çarpıdan kapatır. bu olmazsa sürekli açılır sayfa",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "Ui_MainWindow",
+        "kind": 6,
+        "importPath": "Urun_Ekle",
+        "description": "Urun_Ekle",
+        "peekOfCode": "class Ui_MainWindow(object):\n    def setupUi(self, MainWindow):\n        MainWindow.setObjectName(\"MainWindow\")\n        MainWindow.resize(1065, 639)\n        MainWindow.setStyleSheet(\"/* Genel stil kuralları */\\n\"\n\"* {\\n\"\n\"  background-color: #333333; /* Mavi arka plan */\\n\"\n\"  color: #FFFFFF; /* Beyaz yazı */\\n\"\n\"}\\n\"\n\"\\n\"",
+        "detail": "Urun_Ekle",
+        "documentation": {}
+    },
+    {
+        "label": "Ui_MainWindow",
+        "kind": 6,
+        "importPath": "urun_ekle_ui",
+        "description": "urun_ekle_ui",
+        "peekOfCode": "class Ui_MainWindow(object):\n    def setupUi(self, MainWindow):\n        MainWindow.setObjectName(\"MainWindow\")\n        MainWindow.resize(1065, 639)\n        MainWindow.setStyleSheet(\"/* Genel stil kuralları */\\n\"\n\"* {\\n\"\n\"  background-color: #333333; /* Mavi arka plan */\\n\"\n\"  color: #FFFFFF; /* Beyaz yazı */\\n\"\n\"}\\n\"\n\"\\n\"",
+        "detail": "urun_ekle_ui",
+        "documentation": {}
+    }
+]
